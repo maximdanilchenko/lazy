@@ -1,93 +1,45 @@
+from functools import partial
 from .compiler import Lazy
 
 
-def tr(**attributes):
-    return Lazy().tr(**attributes)
+class LazyFabric:
+    def __init__(self):
+        pass
 
+    @staticmethod
+    def born(tag, **attributes):
+        new_lazy = Lazy()
+        new_lazy.to_tag(tag, attributes)
+        return new_lazy
 
-def html(**attributes):
-    return Lazy().html(**attributes)
+lf = LazyFabric()
 
+html = partial(lf.born, tag='html')
+body = partial(lf.born, tag='body')
+div = partial(lf.born, tag='div')
 
-def body(**attributes):
-    return Lazy().body(**attributes)
+h1 = partial(lf.born, tag='h1')
+h2 = partial(lf.born, tag='h2')
+h3 = partial(lf.born, tag='h3')
+h4 = partial(lf.born, tag='h4')
+h5 = partial(lf.born, tag='h5')
+h6 = partial(lf.born, tag='h6')
 
+p = partial(lf.born, tag='p')
+a = partial(lf.born, tag='a')
+br = partial(lf.born, tag='br')
 
-def div(**attributes):
-    return Lazy().div(**attributes)
+table = partial(lf.born, tag='table')
+tr = partial(lf.born, tag='tr')
+th = partial(lf.born, tag='th')
+td = partial(lf.born, tag='td')
 
+title = partial(lf.born, tag='title')
+header = partial(lf.born, tag='header')
+footer = partial(lf.born, tag='footer')
 
-def h1(**attributes):
-    return Lazy().h1(**attributes)
+meta = partial(lf.born, tag='meta')
+link = partial(lf.born, tag='link')
 
-
-def h2(**attributes):
-    return Lazy().h2(**attributes)
-
-
-def h3(**attributes):
-    return Lazy().h3(**attributes)
-
-
-def h4(**attributes):
-    return Lazy().h4(**attributes)
-
-
-def h5(**attributes):
-    return Lazy().h5(**attributes)
-
-
-def h6(**attributes):
-    return Lazy().h6(**attributes)
-
-
-def p(**attributes):
-    return Lazy().p(**attributes)
-
-
-def a(**attributes):
-    return Lazy().a(**attributes)
-
-
-def table(**attributes):
-    return Lazy().table(**attributes)
-
-
-def th(**attributes):
-    return Lazy().th(**attributes)
-
-
-def td(**attributes):
-    return Lazy().td(**attributes)
-
-
-def header(**attributes):
-    return Lazy().header(**attributes)
-
-
-def footer(**attributes):
-    return Lazy().footer(**attributes)
-
-
-def meta(**attributes):
-    return Lazy().meta(**attributes)
-
-
-def link(**attributes):
-    return Lazy().link(**attributes)
-
-
-def br(**attributes):
-    return Lazy().br(**attributes)
-
-
-def pre(**attributes):
-    return Lazy().pre(**attributes)
-
-
-def code(**attributes):
-    return Lazy().code(**attributes)
-
-
-def title(**attributes):
-    return Lazy().title(**attributes)
+pre = partial(lf.born, tag='pre')
+code = partial(lf.born, tag='code')

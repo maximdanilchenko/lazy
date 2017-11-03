@@ -16,13 +16,6 @@ posts_db = {}
 
 for index, post in enumerate(posts):
     name, abstract, content = read('./posts/%s' % post)
-    abstract = abstract.replace(
-        '\n\n', '<br>'
-    ).replace(
-        '**/\n', '<pre class="w3-panel w3-leftbar w3-border-green"><code>'
-    ).replace(
-        '/**', '</code></pre>'
-    )
     content = content.replace(
         '\n\n', '<br>'
     ).replace(
