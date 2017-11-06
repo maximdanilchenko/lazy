@@ -1,0 +1,9 @@
+*.pyc
+/.idea
+/.cache
+__pycache__
+__cache__
+/main.py
+/app
+/posts
+*DS_Store
