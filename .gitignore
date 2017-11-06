@@ -6,3 +6,4 @@ __cache__
 /main.py
 /app
 /posts
+*DS_Store
