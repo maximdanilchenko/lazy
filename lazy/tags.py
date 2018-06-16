@@ -1,45 +1,97 @@
-from functools import partial
-from .compiler import Lazy
 
+class Tags:
 
-class LazyFabric:
-    def __init__(self):
-        pass
+    def to_tag(self, *_):
+        raise NotImplementedError
 
-    @staticmethod
-    def born(tag, **attributes):
-        new_lazy = Lazy()
-        new_lazy.to_tag(tag, attributes)
-        return new_lazy
+    def tr(self, **attributes):
+        self.to_tag('tr', attributes)
+        return self
 
-lf = LazyFabric()
+    def html(self, **attributes):
+        self.to_tag('html', attributes)
+        return self
 
-html = partial(lf.born, tag='html')
-body = partial(lf.born, tag='body')
-div = partial(lf.born, tag='div')
+    def body(self, **attributes):
+        self.to_tag('body', attributes)
+        return self
 
-h1 = partial(lf.born, tag='h1')
-h2 = partial(lf.born, tag='h2')
-h3 = partial(lf.born, tag='h3')
-h4 = partial(lf.born, tag='h4')
-h5 = partial(lf.born, tag='h5')
-h6 = partial(lf.born, tag='h6')
+    def div(self, **attributes):
+        self.to_tag('div', attributes)
+        return self
 
-p = partial(lf.born, tag='p')
-a = partial(lf.born, tag='a')
-br = partial(lf.born, tag='br')
+    def h1(self, **attributes):
+        self.to_tag('h1', attributes)
+        return self
 
-table = partial(lf.born, tag='table')
-tr = partial(lf.born, tag='tr')
-th = partial(lf.born, tag='th')
-td = partial(lf.born, tag='td')
+    def h2(self, **attributes):
+        self.to_tag('h2', attributes)
+        return self
 
-title = partial(lf.born, tag='title')
-header = partial(lf.born, tag='header')
-footer = partial(lf.born, tag='footer')
+    def h3(self, **attributes):
+        self.to_tag('h3', attributes)
+        return self
 
-meta = partial(lf.born, tag='meta')
-link = partial(lf.born, tag='link')
+    def h4(self, **attributes):
+        self.to_tag('h4', attributes)
+        return self
 
-pre = partial(lf.born, tag='pre')
-code = partial(lf.born, tag='code')
+    def h5(self, **attributes):
+        self.to_tag('h4', attributes)
+        return self
+
+    def h6(self, **attributes):
+        self.to_tag('h5', attributes)
+        return self
+
+    def p(self, **attributes):
+        self.to_tag('p', attributes)
+        return self
+
+    def a(self, **attributes):
+        self.to_tag('a', attributes)
+        return self
+
+    def table(self, **attributes):
+        self.to_tag('table', attributes)
+        return self
+
+    def th(self, **attributes):
+        self.to_tag('th', attributes)
+        return self
+
+    def td(self, **attributes):
+        self.to_tag('td', attributes)
+        return self
+
+    def header(self, **attributes):
+        self.to_tag('header', attributes)
+        return self
+
+    def footer(self, **attributes):
+        self.to_tag('footer', attributes)
+        return self
+
+    def meta(self, **attributes):
+        self.to_tag('meta', attributes)
+        return self
+
+    def link(self, **attributes):
+        self.to_tag('link', attributes)
+        return self
+
+    def br(self, **attributes):
+        self.to_tag('br', attributes)
+        return self
+
+    def pre(self, **attributes):
+        self.to_tag('pre', attributes)
+        return self
+
+    def code(self, **attributes):
+        self.to_tag('code', attributes)
+        return self
+
+    def title(self, **attributes):
+        self.to_tag('title', attributes)
+        return self

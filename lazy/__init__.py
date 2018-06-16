@@ -1,6 +1,6 @@
 from .compiler import MarkedLazy as mark
 
-from .tags import (
+from .lazy import (
     html,
     body,
     header,
